@@ -1,6 +1,7 @@
 import Image from "next/image";
 import localFont from "next/font/local";
 import { useState } from "react";
+import ReactMarkdown from "react-markdown";
 import { gemini } from "./api/gemini";
 
 const geistSans = localFont({
@@ -20,6 +21,11 @@ export default function Home() {
   const [idade, setIdade] = useState("");
   const [imc, setImc] = useState<number | null>(null);
   const [sugestao, setSugestao] = useState("");
+
+  const tabelaMarkdown = `
+ 
+   ${sugestao}            
+  `;
 
   // Função para calcular o IMC
   const calcularIMC = async () => {
@@ -41,10 +47,10 @@ export default function Home() {
 
   return (
     <div
-      className={`${geistSans.variable} ${geistMono.variable} grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]`}
+      className={`${geistSans.variable} ${geistMono.variable} flex flex-col items-center justify-center min-h-screen p-8 gap-8 sm:p-20 font-[family-name:var(--font-geist-sans)]`}
     >
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <h1 className="text-2xl font-bold">Calculadora de IMC </h1>
+      <main className="flex flex-col gap-8 items-center">
+        <h1 className="text-2xl font-bold">Calculadora de IMC</h1>
 
         <div className="flex gap-4 items-center flex-col sm:flex-row">
           {/* Inputs de peso e altura */}
@@ -116,9 +122,11 @@ export default function Home() {
         )}
         {/* Exibir sugestões de nutrição */}
         {sugestao && (
-          <div className="mt-4">
+          <div className="flex flex-col items-center mt-4">
             <h2 className="text-lg font-bold">Sugestões de Nutrição:</h2>
-            <p>{sugestao}</p>
+            <ReactMarkdown className="minha-classe">
+              {tabelaMarkdown}
+            </ReactMarkdown>
           </div>
         )}
       </main>

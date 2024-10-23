@@ -19,3 +19,14 @@ body {
   background: var(--background);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* Exemplo de CSS para estilizar a tabela */
+.minha-classe {
+  width: 70%;
+  border-collapse: collapse;
+  margin-top: 10px;
+  /* background-color: aqua; */
+  background-color: #eef;
+  padding: 2.2rem 2.4rem;
+  border-radius: 4px;
+}
