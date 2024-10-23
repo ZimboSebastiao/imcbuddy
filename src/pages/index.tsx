@@ -21,6 +21,7 @@ export default function Home() {
   const [idade, setIdade] = useState("");
   const [imc, setImc] = useState<number | null>(null);
   const [sugestao, setSugestao] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const tabelaMarkdown = `
  
@@ -33,6 +34,7 @@ export default function Home() {
     const pesoKg = parseFloat(peso);
 
     if (alturaMetros > 0 && pesoKg > 0) {
+      setLoading(true);
       const imcCalculado = pesoKg / (alturaMetros * alturaMetros);
       setImc(parseFloat(imcCalculado.toFixed(2)));
 
@@ -42,6 +44,7 @@ export default function Home() {
       )}, peso é ${pesoKg} kg, altura é ${alturaMetros} m e idade é ${idade} anos. Quais são suas sugestões de nutrição?`;
       const resposta = await gemini(mensagem);
       setSugestao(resposta);
+      setLoading(false);
     }
   };
 
@@ -49,6 +52,11 @@ export default function Home() {
     <div
       className={`${geistSans.variable} ${geistMono.variable} flex flex-col items-center justify-center min-h-screen p-8 gap-8 sm:p-20 font-[family-name:var(--font-geist-sans)]`}
     >
+      {loading && (
+        <div className="fixed inset-0 flex items-center justify-center bg-white z-50">
+          <p className="text-lg">Carregando... ⏳</p>
+        </div>
+      )}
       <main className="flex flex-col gap-8 items-center">
         <h1 className="text-2xl font-bold">Calculadora de IMC</h1>
 
