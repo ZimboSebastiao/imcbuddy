@@ -1,8 +1,8 @@
 // src/pages/api/gemini.js
-
 import axios from "axios";
-import { API_KEY } from "@env";
 import { delay } from "./utils";
+
+const API_KEY = process.env.NEXT_PUBLIC_API_KEY;
 
 export const gemini = async (message, retries = 3) => {
   while (retries > 0) {
