@@ -1,6 +1,7 @@
 import Image from "next/image";
 import localFont from "next/font/local";
 import { useState } from "react";
+import { gemini } from "./api/gemini";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -16,16 +17,25 @@ const geistMono = localFont({
 export default function Home() {
   const [peso, setPeso] = useState("");
   const [altura, setAltura] = useState("");
+  const [idade, setIdade] = useState("");
   const [imc, setImc] = useState<number | null>(null);
+  const [sugestao, setSugestao] = useState("");
 
   // Função para calcular o IMC
-  const calcularIMC = () => {
+  const calcularIMC = async () => {
     const alturaMetros = parseFloat(altura);
     const pesoKg = parseFloat(peso);
 
     if (alturaMetros > 0 && pesoKg > 0) {
       const imcCalculado = pesoKg / (alturaMetros * alturaMetros);
       setImc(parseFloat(imcCalculado.toFixed(2)));
+
+      // Mensagem para enviar ao assistente de nutrição
+      const mensagem = `Meu IMC é ${imcCalculado.toFixed(
+        2
+      )}, peso é ${pesoKg} kg, altura é ${alturaMetros} m e idade é ${idade} anos. Quais são suas sugestões de nutrição?`;
+      const resposta = await gemini(mensagem);
+      setSugestao(resposta);
     }
   };
 
@@ -39,6 +49,18 @@ export default function Home() {
         <div className="flex gap-4 items-center flex-col sm:flex-row">
           {/* Inputs de peso e altura */}
           <div className="flex flex-col gap-4">
+            <input
+              type="number"
+              placeholder="Idade"
+              value={idade}
+              onChange={(e) => {
+                const valor = e.target.value;
+                if (valor.length <= 2) {
+                  setIdade(valor);
+                }
+              }}
+              className="border p-2 rounded"
+            />
             <input
               type="number"
               placeholder="Peso (kg)"
@@ -90,6 +112,13 @@ export default function Home() {
             <p>
               Seu IMC é: <strong>{imc}</strong>
             </p>
+          </div>
+        )}
+        {/* Exibir sugestões de nutrição */}
+        {sugestao && (
+          <div className="mt-4">
+            <h2 className="text-lg font-bold">Sugestões de Nutrição:</h2>
+            <p>{sugestao}</p>
           </div>
         )}
       </main>
