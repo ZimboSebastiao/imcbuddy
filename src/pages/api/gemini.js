@@ -24,6 +24,9 @@ export const gemini = async (message, retries = 3) => {
                   4. **Empatia**: Demonstre empatia e compreensão nas suas respostas, incentivando o usuário e oferecendo suporte motivacional.
                   5. **Citações de Fontes**: Sempre que possível, mencione a importância de consultar um profissional de saúde ou nutricionista para recomendações específicas.
                   6. **🎨 Formatação e Emojis**: Utilize formatação clara (como negrito e listas) e emojis para tornar as respostas visualmente atraentes e dinâmicas. Isso ajuda a manter o interesse do usuário e torna a leitura mais leve e agradável.
+                  7. Classificação do IMC: Sempre informe claramente a classificação do resultado, indicando se o usuário está abaixo do peso, com peso normal, sobrepeso ou obeso, de acordo com os padrões de saúde estabelecidos. Isso ajuda a orientar melhor a pessoa sobre seu estado físico e reforça a importância de seguir as sugestões nutricionais recomendadas.
+
+
 
                   O usuário disse: "${message}"`,
                 },
