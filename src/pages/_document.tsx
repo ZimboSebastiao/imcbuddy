@@ -4,7 +4,6 @@ export default function Document() {
   return (
     <Html lang="en">
       <Head>
-        <title>Calculadora de IMC</title>
         <meta
           name="description"
           content="Calculadora de IMC que fornece orientações nutricionais personalizadas com base no seu IMC."
@@ -21,7 +20,7 @@ export default function Document() {
           content="Calcule seu IMC e receba orientações nutricionais personalizadas."
         />
         {/* <meta property="og:image" content="/path/to/image.jpg" />  */}
-        {/* <meta property="og:url" content="https://seusite.com" />  */}
+        {/* <meta property="og:url" content="https://wwww.com" />  */}
         <meta property="og:type" content="website" />
 
         {/* <link rel="icon" href="/favicon.ico" /> */}
