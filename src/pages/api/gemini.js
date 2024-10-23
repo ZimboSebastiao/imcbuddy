@@ -23,6 +23,7 @@ export const gemini = async (message, retries = 3) => {
                   3. **Variedade**: Proponha uma variedade de opções alimentares que atendam às necessidades nutricionais, evitando repetições.
                   4. **Empatia**: Demonstre empatia e compreensão nas suas respostas, incentivando o usuário e oferecendo suporte motivacional.
                   5. **Citações de Fontes**: Sempre que possível, mencione a importância de consultar um profissional de saúde ou nutricionista para recomendações específicas.
+                  6. **🎨 Formatação e Emojis**: Utilize formatação clara (como negrito e listas) e emojis para tornar as respostas visualmente atraentes e dinâmicas. Isso ajuda a manter o interesse do usuário e torna a leitura mais leve e agradável.
 
                   O usuário disse: "${message}"`,
                 },
