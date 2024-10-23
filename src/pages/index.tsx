@@ -123,7 +123,7 @@ export default function Home() {
         {/* Exibir sugestões de nutrição */}
         {sugestao && (
           <div className="flex flex-col items-center mt-4">
-            <h2 className="text-lg font-bold">Sugestões de Nutrição:</h2>
+            <h2 className="text-lg font-bold">Orientações Nutricionais</h2>
             <ReactMarkdown className="minha-classe">
               {tabelaMarkdown}
             </ReactMarkdown>
