@@ -43,7 +43,13 @@ export default function Home() {
               type="number"
               placeholder="Peso (kg)"
               value={peso}
-              onChange={(e) => setPeso(e.target.value)}
+              onChange={(e) => {
+                const valor = e.target.value;
+
+                if (valor.length <= 3) {
+                  setPeso(valor);
+                }
+              }}
               className="border p-2 rounded"
             />
             <input
