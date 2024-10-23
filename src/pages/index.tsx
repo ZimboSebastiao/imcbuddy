@@ -101,7 +101,7 @@ export default function Home() {
                 if (valor.length === 2 && !valor.includes(".")) {
                   valor = valor[0] + "." + valor[1];
                 }
-                const [parteInteira, parteDecimal] = valor.split(".");
+                const [parteDecimal] = valor.split(".");
 
                 if (parteDecimal && parteDecimal.length > 2) {
                   return;
