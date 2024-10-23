@@ -1,40 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/pages/api-reference/create-next-app).
+# Calculadora de IMC com Gemini
 
-## Getting Started
+Este projeto é uma **Calculadora de Índice de Massa Corporal (IMC)** que permite aos usuários calcular seu IMC e receber orientações nutricionais com base nos resultados. A aplicação é desenvolvida com Next.js e utiliza o React Markdown para exibir as sugestões de nutrição. Para fornecer recomendações personalizadas, a aplicação integra a inteligência artificial do **Gemini**, uma IA do Google.
 
-First, run the development server:
+## Funcionalidades
+
+- **Cálculo do IMC:** Os usuários podem inserir seu peso, altura e idade para calcular seu IMC.
+- **Orientações Nutricionais:** Com base no IMC calculado, a aplicação gera sugestões de nutrição utilizando a inteligência artificial do Gemini.
+- **Interface Intuitiva:** A interface foi projetada para ser simples e fácil de usar, permitindo que qualquer pessoa utilize a calculadora sem dificuldades.
+
+## Tecnologias Utilizadas
+
+- **Next.js:** Framework React para construção de aplicações web.
+- **React Markdown:** Biblioteca para renderizar Markdown em componentes React.
+- **Gemini (Google):** Uma ferramenta de inteligência artificial que analisa os dados fornecidos pelo usuário e gera recomendações nutricionais personalizadas.
+- **Local Fonts:** Utiliza fontes locais para personalizar a tipografia da aplicação.
+
+## Como Funciona
+
+1. O usuário insere seu peso, altura e idade.
+2. A aplicação calcula o IMC com base nas informações fornecidas.
+3. Uma mensagem é enviada ao Gemini com os dados do usuário, e a inteligência artificial retorna orientações nutricionais adaptadas.
+4. As sugestões são exibidas em formato Markdown para uma leitura clara e organizada.
+
+## Como Usar
+
+1. Clone o repositório:
+
+   ```bash
+   git clone https://github.com/ZimboSebastiao/imcbuddy.git
+   cd nome_do_repositorio
+   ```
+
+2. Instale as dependências:
+
+```bash
+npm install
+```
+
+3. Inicie o servidor de desenvolvimento:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+4. Acesse a aplicação no seu navegador em http://localhost:3000.
 
-You can start editing the page by modifying `pages/index.tsx`. The page auto-updates as you edit the file.
+## Contribuições
 
-[API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
+Contribuições são bem-vindas! Sinta-se à vontade para enviar pull requests ou abrir issues para sugerir melhorias.
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/pages/building-your-application/routing/api-routes) instead of React pages.
+## Licença
 
-This project uses [`next/font`](https://nextjs.org/docs/pages/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Este projeto é licenciado sob a MIT License.
 
-## Learn More
+## Contato
 
-To learn more about Next.js, take a look at the following resources:
+Se você tiver alguma dúvida ou sugestão, entre em contato:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn-pages-router) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/pages/building-your-application/deploying) for more details.
+Nome: Zimbo Albertina Sebastião
+LinkedIn: Zimbo Sebastião
+Portfolio: [Zimbo Sebastião - Portfolio](https://zimbosebastiao.github.io/portfolio/)
