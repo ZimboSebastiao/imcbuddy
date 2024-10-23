@@ -115,8 +115,8 @@ export default function Home() {
         {/* Exibir o resultado do IMC */}
         {imc !== null && (
           <div className="mt-4">
-            <p>
-              Seu IMC é: <strong>{imc}</strong>
+            <p className="imc">
+              Seu Índice de Massa Corporal é: <strong>{imc}</strong>
             </p>
           </div>
         )}
