@@ -23,7 +23,7 @@ export default function Document() {
         {/* <meta property="og:url" content="https://wwww.com" />  */}
         <meta property="og:type" content="website" />
 
-        {/* <link rel="icon" href="/favicon.ico" /> */}
+        <link rel="icon" href="/favicon.png" />
       </Head>
       <body className="antialiased">
         <Main />
