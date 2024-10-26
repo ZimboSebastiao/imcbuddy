@@ -59,4 +59,5 @@ Se você tiver alguma dúvida ou sugestão, entre em contato:
 
 Nome: Zimbo Albertina Sebastião
 LinkedIn: Zimbo Sebastião
+Live Demo: [Calculadora IMC](https://imcbody.vercel.app/)
 Portfolio: [Zimbo Sebastião - Portfolio](https://zimbosebastiao.github.io/portfolio/)
