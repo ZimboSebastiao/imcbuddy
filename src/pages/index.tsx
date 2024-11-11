@@ -72,6 +72,15 @@ export default function Home() {
             });
           });`}
       </Script>
+      <div id="yandex_rtb_R-A-12827422-3"></div>
+      <Script>
+        {`window.yaContextCb.push(() => {
+    Ya.Context.AdvManager.render({
+        "blockId": "R-A-12827422-3",
+        "renderTo": "yandex_rtb_R-A-12827422-3"
+    })
+})`}
+      </Script>
       <div
         className={`${geistSans.variable} ${geistMono.variable} flex flex-col items-center justify-center min-h-screen p-8 gap-8 sm:p-20 font-[family-name:var(--font-geist-sans)]`}
       >
