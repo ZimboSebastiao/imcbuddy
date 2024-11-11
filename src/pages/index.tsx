@@ -64,22 +64,23 @@ export default function Home() {
       />
       <Script id="yandex-rtb" strategy="lazyOnload">
         {`window.yaContextCb = window.yaContextCb || [];
-          window.yaContextCb.push(() => {
-            Ya.Context.AdvManager.render({
-              "blockId": "R-A-12827422-1",
-              "type": "floorAd",
-              "platform": "desktop"
-            });
-          });`}
+    window.yaContextCb.push(() => {
+      Ya.Context.AdvManager.render({
+        "blockId": "R-A-12827422-1",
+        "type": "floorAd",
+        "platform": "desktop"
+      });
+      // Agora que o primeiro anúncio foi carregado, podemos carregar o segundo
+      window.yaContextCb.push(() => {
+        Ya.Context.AdvManager.render({
+          "blockId": "R-A-12827422-3",
+          "renderTo": "yandex_rtb_R-A-12827422-3"
+        });
+      });
+    });`}
       </Script>
-      <Script>
-        {`window.yaContextCb.push(() => {
-    Ya.Context.AdvManager.render({
-      "blockId": "R-A-12827422-3",
-      "renderTo": "yandex_rtb_R-A-12827422-3"
-      })
-      })`}
-      </Script>
+
+      {/* O bloco para o segundo anúncio */}
       <div id="yandex_rtb_R-A-12827422-3"></div>
       <div
         className={`${geistSans.variable} ${geistMono.variable} flex flex-col items-center justify-center min-h-screen p-8 gap-8 sm:p-20 font-[family-name:var(--font-geist-sans)]`}
