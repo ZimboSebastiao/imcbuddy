@@ -57,63 +57,61 @@ export default function Home() {
         <script>window.yaContextCb=window.yaContextCb||[]</script>
         <script src="https://yandex.ru/ads/system/context.js" async></script>
       </Head>
-      {/* Carregar o script Yandex.RTB com o atributo strategy="lazyOnload" */}
+      {/* Carregar o script Yandex.RTB */}
       <Script
         src="https://yandex.ru/ads/system/context.js"
         strategy="lazyOnload"
       />
-
-      {/* Configurar os blocos de anúncios RTB */}
       <Script id="yandex-rtb" strategy="lazyOnload">
         {`window.yaContextCb = window.yaContextCb || [];
-  window.yaContextCb.push(() => {
-    // Renderizar o primeiro bloco de anúncio
-    Ya.Context.AdvManager.render({
-      "blockId": "R-A-12827422-1",
-      "type": "floorAd",
-      "platform": "desktop"
-    });
-
-    // Agora que o primeiro anúncio foi carregado, renderizar o segundo
     window.yaContextCb.push(() => {
       Ya.Context.AdvManager.render({
-        "blockId": "R-A-12827422-3",
-        "renderTo": "yandex_rtb_R-A-12827422-3"
+        "blockId": "R-A-12827422-1",
+        "type": "floorAd",
+        "platform": "desktop"
       });
-    });
-  });`}
+      // Agora que o primeiro anúncio foi carregado, podemos carregar o segundo
+      window.yaContextCb.push(() => {
+        Ya.Context.AdvManager.render({
+          "blockId": "R-A-12827422-3",
+          "renderTo": "yandex_rtb_R-A-12827422-3"
+        });
+      });
+    });`}
       </Script>
+      <Script
+        type="text/javascript"
+        dangerouslySetInnerHTML={{
+          __html: `
+      (function(e, x, pe, r, i, me, nt) {
+        e[i] = e[i] || function() {
+          (e[i].a = e[i].a || []).push(arguments);
+        };
+        me = x.createElement(pe);
+        me.async = 1;
+        me.src = r;
+        nt = x.getElementsByTagName(pe)[0];
+        me.addEventListener("error", function() {
+          function cb(t) {
+            t = t[t.length - 1];
+            if (typeof t === "function") t({ flags: {} });
+          }
+          if (Array.isArray(e[i].a)) e[i].a.forEach(cb);
+          e[i] = function() {
+            cb(arguments);
+          };
+        });
+        nt.parentNode.insertBefore(me, nt);
+      })(window, document, "script", "https://abt.s3.yandex.net/expjs/latest/exp.js", "ymab");
 
-      {/* Bloco para renderizar o segundo anúncio */}
+      ymab("metrika.98887785", "setConfig", { enableSetYmUid: true });
+      ymab("metrika.98887785", "init");
+    `,
+        }}
+      />
+
+      {/* O bloco para o segundo anúncio */}
       <div id="yandex_rtb_R-A-12827422-3"></div>
-
-      {/* Carregar o script de Yandex Metrika (com erro handling) */}
-      <Script type="text/javascript">
-        {`(function(e, x, pe, r, i, me, nt) {
-    e[i] = e[i] || function() {
-      (e[i].a = e[i].a || []).push(arguments);
-    };
-    me = x.createElement(pe);
-    me.async = 1;
-    me.src = r;
-    nt = x.getElementsByTagName(pe)[0];
-    me.addEventListener("error", function() {
-      function cb(t) {
-        t = t[t.length - 1];
-        if (typeof t === "function") t({ flags: {} });
-      }
-      if (Array.isArray(e[i].a)) e[i].a.forEach(cb);
-      e[i] = function() {
-        cb(arguments);
-      };
-    });
-    nt.parentNode.insertBefore(me, nt);
-  })(window, document, "script", "https://abt.s3.yandex.net/expjs/latest/exp.js", "ymab");
-
-  ymab("metrika.98887785", "setConfig", { enableSetYmUid: true });
-  ymab("metrika.98887785", "init");`}
-      </Script>
-
       <div
         className={`${geistSans.variable} ${geistMono.variable} flex flex-col items-center justify-center min-h-screen p-8 gap-8 sm:p-20 font-[family-name:var(--font-geist-sans)]`}
       >
