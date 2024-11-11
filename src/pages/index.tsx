@@ -114,8 +114,6 @@ export default function Home() {
   ymab("metrika.98887785", "init");`}
       </Script>
 
-      {/* O bloco para o segundo anúncio */}
-      <div id="yandex_rtb_R-A-12827422-3"></div>
       <div
         className={`${geistSans.variable} ${geistMono.variable} flex flex-col items-center justify-center min-h-screen p-8 gap-8 sm:p-20 font-[family-name:var(--font-geist-sans)]`}
       >
