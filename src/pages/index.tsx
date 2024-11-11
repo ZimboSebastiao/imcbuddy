@@ -56,6 +56,8 @@ export default function Home() {
         <title>Calculadora de IMC</title>
         <script>window.yaContextCb=window.yaContextCb||[]</script>
         <script src="https://yandex.ru/ads/system/context.js" async></script>
+        <script>window.yaContextCb=window.yaContextCb||[]</script>
+        <script src="https://yandex.ru/ads/system/context.js" async></script>
       </Head>
       {/* Carregar o script Yandex.RTB */}
       <Script
