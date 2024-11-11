@@ -3,6 +3,7 @@ import Head from "next/head";
 import localFont from "next/font/local";
 import { useState } from "react";
 import ReactMarkdown from "react-markdown";
+import Script from "next/script";
 import { gemini } from "./api/gemini";
 
 const geistSans = localFont({
@@ -53,7 +54,24 @@ export default function Home() {
     <>
       <Head>
         <title>Calculadora de IMC</title>
+        <script>window.yaContextCb=window.yaContextCb||[]</script>
+        <script src="https://yandex.ru/ads/system/context.js" async></script>
       </Head>
+      {/* Carregar o script Yandex.RTB */}
+      <Script
+        src="https://yandex.ru/ads/system/context.js"
+        strategy="lazyOnload"
+      />
+      <Script id="yandex-rtb" strategy="lazyOnload">
+        {`window.yaContextCb = window.yaContextCb || [];
+          window.yaContextCb.push(() => {
+            Ya.Context.AdvManager.render({
+              "blockId": "R-A-12827422-1",
+              "type": "floorAd",
+              "platform": "desktop"
+            });
+          });`}
+      </Script>
       <div
         className={`${geistSans.variable} ${geistMono.variable} flex flex-col items-center justify-center min-h-screen p-8 gap-8 sm:p-20 font-[family-name:var(--font-geist-sans)]`}
       >
