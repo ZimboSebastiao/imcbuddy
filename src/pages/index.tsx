@@ -81,6 +81,7 @@ export default function Home() {
       </Script>
 
       <Script
+        id="yandex-rtb-script"
         strategy="lazyOnload"
         dangerouslySetInnerHTML={{
           __html: `(function(e, x, pe, r, i, me, nt) {
