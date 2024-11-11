@@ -83,6 +83,9 @@ export default function Home() {
       <Script
         id="yandex-rtb-script"
         strategy="afterInteractive"
+        onError={(e) => {
+          console.error("Erro ao carregar o script", e);
+        }}
         dangerouslySetInnerHTML={{
           __html: `(function(e, x, pe, r, i, me, nt) {
       e[i] = e[i] || function() {
